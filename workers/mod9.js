@@ -32,6 +32,8 @@ if (mediaObject.meta.m4a && mediaObject.meta.m4a.length > 0 && mediaObject.meta.
               audio = 'http://media.hyperaud.io/' + mediaObject._id + '/' + mediaObject.meta.audio[0].file;
             } else if (mediaObject.meta.video) {
               audio = 'http://media.hyperaud.io/' + mediaObject._id + '/' + mediaObject.meta.video[0].file;
+            } else if (mediaObject.source.mp4) {
+	      audio = mediaObject.source.mp4.url;
             }
 
             if (payload.type == "text" && audio) {

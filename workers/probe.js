@@ -232,7 +232,7 @@ module.exports = function() {
               MediaObject.findById(payload.media._id).exec(function(err, mediaObject) {
                 if (!err) {
                   mediaObject.type = 'audio';
-                  mediaObject.label = metadata.audio[0].meta.metadata.title + ', ' + metadata.audio[0].meta.metadata.artist;
+                  //mediaObject.label = metadata.audio[0].meta.metadata.title + ', ' + metadata.audio[0].meta.metadata.artist;
                   mediaObject.desc = metadata.audio[0].meta.metadata.album;
 
                   if (mediaObject.source.unknown) {
@@ -264,8 +264,8 @@ module.exports = function() {
 
                   var label = metadata.video[0].meta.metadata.title;
 
-                  if (label && typeof label != 'undefined' && label.length > mediaObject.label.length) {
-                    mediaObject.label = label;
+                  if (label && typeof label != 'undefined' && label.indeOf('undefined') < 0 && label.length > mediaObject.label.length) {
+                    //mediaObject.label = label;
                   }
 
                   if (mediaObject.source.unknown) {
